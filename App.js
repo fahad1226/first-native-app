@@ -3,11 +3,13 @@ import React from 'react';
 import Cat from './Components/Cat'
 import Dog from './Components/Dog'
 import BirdsImage from './Components/BirdsImage'
+import State from './Components/State'
 import { 
   StyleSheet,
   Text,
   View,
-  TextInput
+  TextInput,
+  ScrollView
   } from 'react-native';
 
 
@@ -18,20 +20,23 @@ export default function App() {
     return firstName + " " + secondName + " " + thirdName;
   }
   return (
-    <View style={styles.container}>
-      <Text style={styles.me}>
-        Hello this is {fullName("Fahad", "Bin", "Munir")}
-      </Text>
-      <TextInput
-        style={styles.inputStyle}
-        defaultValue="Dhaka!"
-      />
-      <Cat />
-      <Dog name="white"/>
-      <Dog name="black"/>
-      <BirdsImage />
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.me}>
+          Hello this is {fullName("Fahad", "Bin", "Munir")}
+        </Text>
+        <TextInput
+          style={styles.inputStyle}
+          defaultValue="Dhaka!"
+        />
+        <Cat />
+        <Dog name="white"/>
+        <Dog name="black"/>
+        <BirdsImage />
+        <State name="hungry"/>
+        <StatusBar style="auto" />
+      </View>
+    </ScrollView>
   );
 }
 
